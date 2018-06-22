@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <title>IDS</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.png">
+
+    <!-- Web Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500" rel="stylesheet">
+
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="assets/css/dashboard.css" rel="stylesheet" />
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+
+<body class="header-fixed">
+
+    <div class="wrapper">
+        <!--== Sidebar ==-->
+        <div class="sidebar">
+            <div class="sidebar-wrapper">
+                <div class="logo user-id">
+                    <img class="img-responsive" src="assets/img/avatar.jpg" alt="avatar">
+                    <p class="simple-text">Femi Factor<br>
+                        <a href="#">Edit profile</a></p>
+                </div>
+
+                <ul class="nav-nav margin-bottom-25">
+                        <li class="active">
+                            <a href="dashboard.blade.php">Dashboard</a>
+                        </li>
+                        <p class="side-title margin-tb-40">
+                            Transactions
+                        </p>
+                        <li>
+                            <a href="#">Buy E-currency</a>
+                        </li>
+                        <li>
+                            <a href="#">Sell E-currency</a>
+                        </li>
+                        <p class="side-title margin-tb-40">
+                            Account
+                        </p>
+                        <li>
+                            <a href="#">Change Email</a>
+                        </li>
+                        <li>
+                            <a href="#">Change Password</a>
+                        </li>
+                        <li>
+                            <a href="#">Verify Account</a>
+                        </li>
+                    </ul>
+                <ul class="nav">
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-sign-out"></i> Log out
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--== End Sidebar ==-->
+        <!--== Main Panel ==-->
+        <div class="main-panel">
+            <nav class="navbar navbar-default navbar-fixed">
+                <div class="container-fluid padding-top-15">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">
+                            <img id="logo-header" src="assets/img/logo.png" width="200" alt="Logo">
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse">
+
+                    </div>
+                </div>
+            </nav>
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Template Modal</h4>
+                            </div>
+                            <div class="content">
+                                <!-- Modal -->
+                                <button class="btn-u btn-block" data-toggle="modal" data-target="#myModal">Modal Sample</button>
+                                <!-- End Modal -->
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Template Form Modal</h4>
+                            </div>
+                            <div class="content">
+                                <!-- Modal -->
+                                <button class="btn-u btn-block" data-toggle="modal" data-target="#formModal">Modal Sample</button>
+                                <!-- End Modal -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <nav class="pull-left">
+                        <ul class="footer-menu">
+                            <li>
+                                <a href="#">
+                                About us
+                            </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                Our solutions
+                            </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                FAQs
+                            </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                               Contact us
+                            </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <p class="copyright pull-right">
+                        ©
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script> <a href="#">IDS</a>
+                    </p>
+                </div>
+            </footer>
+
+        </div>
+        <!--== End Main Panel ==-->
+    </div>
+    <!--/wrapper-->
+
+     <!-- JS Global Compulsory -->
+     <script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
+     <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+     <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
+     <script src="assets/js/light-bootstrap-dashboard.js"></script>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 id="myModalLabel1" class="modal-title">Authorization or reference number</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                </div>
+                <div class="modal-footer">
+                    <button data-dismiss="modal" class="btn-u btn-block" type="button">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                    <h4 id="formModalLabel1" class="modal-title">Edit recurring payment</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="reg-page log-reg-page">
+
+                        <label>Customer ID </label>
+                        <input class="form-control margin-bottom-20" placeholder="5413018441" type="text">
+
+                        <label>Customer Name </label>
+                        <input class="form-control margin-bottom-20" placeholder="Femi Etowa" type="text">
+
+                        <label>Amount </label>
+                        <input class="form-control margin-bottom-20" placeholder="N25000" type="text">
+
+                        <label>Frequency </label>
+                        <select class="form-control margin-bottom-20">
+                            <option>Select an Option</option>
+                            <option>Choose me</option>
+                            <option>Choose us</option>
+                        </select>
+
+                        <label>Start Date </label>
+                        <input class="form-control margin-bottom-20" placeholder="January 24, 2017" type="text">
+
+                        <label>End Date </label>
+                        <input class="form-control margin-bottom-20" placeholder="January 24, 2017" type="text">
+
+                        <button class="btn-u btn-block" type="submit">Save</button>
+                    </form>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
