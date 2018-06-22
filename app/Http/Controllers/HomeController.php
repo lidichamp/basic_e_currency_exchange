@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $transaction=Transaction::paginate(1);
+        $transaction=Transaction::where('user_id',Auth::user()->id)->paginate(25);
 
         return view('dashboard',['transactions'=>$transaction]);
     }
