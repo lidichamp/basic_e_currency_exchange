@@ -16,6 +16,16 @@
                     <div class="card">
                         <div class="header">
                             <h4 class="title">Transaction Details</h4>
+
+                            <p>Name:{{$name}}</p>
+                            <p>Amount:{{$transaction->amount}}</p>
+                            <p>Bank Details:{{$transaction->bank}}<br>{{$transaction->bank_details}}</p>
+                            <p>Transaction Type:{{$transaction->type}}</p>
+                            <p>Amount Payable: &#8358; {{ number_format($transaction->amount_payable) }}</p>
+                            <p>E-currency:{{$transaction->e_currency}}</p>
+                            <p>Status:{{$transaction->status}}</p>
+                            <p>Date:{{$transaction->created_at}}</p>
+
                         </div>
                         <div class="table-responsive table-full-width table-container">
 
@@ -26,44 +36,6 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                    <h4 id="formModalLabel1" class="modal-title">Edit recurring payment</h4>
-                </div>
-                <div class="modal-body">
-                    <form class="reg-page log-reg-page">
 
-                        <label>Customer ID </label>
-                        <input class="form-control margin-bottom-20" placeholder="5413018441" type="text">
-
-                        <label>Customer Name </label>
-                        <input class="form-control margin-bottom-20" placeholder="Femi Etowa" type="text">
-
-                        <label>Amount </label>
-                        <input class="form-control margin-bottom-20" placeholder="N25000" type="text">
-
-                        <label>Frequency </label>
-                        <select class="form-control margin-bottom-20">
-                            <option>Select an Option</option>
-                            <option>Choose me</option>
-                            <option>Choose us</option>
-                        </select>
-
-                        <label>Start Date </label>
-                        <input class="form-control margin-bottom-20" placeholder="January 24, 2017" type="text">
-
-                        <label>End Date </label>
-                        <input class="form-control margin-bottom-20" placeholder="January 24, 2017" type="text">
-
-                        <button class="btn-u btn-block" type="submit">Save</button>
-                    </form>
-                </div>
-                <div class="modal-footer"></div>
-            </div>
-        </div>
-    </div>
 
 @endsection

@@ -42,14 +42,20 @@
         <div class="sidebar-wrapper">
             <div class="logo user-id">
                 <img class="img-responsive" src="/img/avatar.jpg" alt="avatar">
-                <p class="simple-text">Femi Factor<br>
-                    <a href="#">Edit</a>
+                <br>
+                <p class="simple-text">{{Illuminate\Support\Facades\Auth::user()->name}}<br></p>
+                <ul class="side-title margin-tb-40">{{Illuminate\Support\Facades\Auth::user()->email}}</ul>
             </div>
 
             <ul class="nav-nav margin-bottom-25">
                 <li class="active">
-                    <a href="dashboard.html">Dashboard</a>
+                    <a href="{{route('home')}}">Dashboard</a>
                 </li>
+                @if(Illuminate\Support\Facades\Auth::user()->id==1)
+                    <li class="active">
+                    <a href="{{route('all')}}">All Transactions</a>
+                    </li>
+                @endif
                 <p class="side-title margin-tb-40">
                     Transactions
                 </p>
@@ -63,13 +69,10 @@
                     Account
                 </p>
                 <li>
-                    <a href="#">Change Email</a>
+                    <a href="#" data-toggle="modal" data-target="#formModal3">Change Name</a>
                 </li>
                 <li>
-                    <a href="#">Change Password</a>
-                </li>
-                <li>
-                    <a href="#">Verify Account</a>
+                    <a href="#" data-toggle="modal" data-target="#formModal3">Change Password</a>
                 </li>
             </ul>
             <ul class="nav">
@@ -168,13 +171,13 @@
                 <form class="reg-page log-reg-page" action="{{route('save')}}" method="post">
 
                     <label>Amount </label>
-                    <input class="form-control margin-bottom-20" placeholder="5413018441" name="amount" type="number">
+                    <input class="form-control margin-bottom-20" placeholder="5413018441" name="amount" type="number" required>
                     <input type="hidden" value="buy" name="type">
                     <label>Exchange Rate</label>
-                    <input class="form-control margin-bottom-20" placeholder="5413018441" name="exchange_rate" type="number">
+                    <input class="form-control margin-bottom-20" placeholder="5413018441" name="exchange_rate" type="number" required>
                     {{ csrf_field() }}
                     <label>e-currency</label>
-                    <select class="form-control margin-bottom-20" name="e_currency">
+                    <select class="form-control margin-bottom-20" name="e_currency" required>
                         <option>Select an Option</option>
                         <option value="payoneer">Payoneer</option>
                         <option value="paypal">Paypal</option>
@@ -208,13 +211,13 @@
                 <form class="reg-page log-reg-page" action="{{route('save')}}" method="post">
 
                     <label>Amount </label>
-                    <input class="form-control margin-bottom-20" placeholder="5413018441" name="amount" type="number">
+                    <input class="form-control margin-bottom-20" placeholder="5413018441" name="amount" type="number" required>
                     <input type="hidden" value="sell" name="type">
                     <label>Exchange Rate</label>
-                    <input class="form-control margin-bottom-20" placeholder="5413018441" name="exchange_rate" type="number">
+                    <input class="form-control margin-bottom-20" placeholder="5413018441" name="exchange_rate" type="number" required>
                     {{ csrf_field() }}
                     <label>e-currency</label>
-                    <select class="form-control margin-bottom-20" name="e_currency">
+                    <select class="form-control margin-bottom-20" name="e_currency" required>
                         <option>Select an Option</option>
                         <option value="payoneer">Payoneer</option>
                         <option value="paypal">Paypal</option>
@@ -225,11 +228,38 @@
                     </select>
 
                     <label>Bank </label>
-                    <input class="form-control margin-bottom-20" placeholder="GTBank" name="bank" type="text">
+                    <input class="form-control margin-bottom-20" placeholder="GTBank" name="bank" type="text" >
 
                     <label>Bank Account Number</label>
-                    <input class="form-control margin-bottom-20" placeholder="5413018441" name="bank_details" type="text">
+                    <input class="form-control margin-bottom-20" placeholder="5413018441" name="bank_details" type="text" >
                     <input type="hidden" value="pending" name="status">
+                    <button class="btn-u btn-block" type="submit">Save</button>
+                </form>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="formModal3" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 id="formModalLabel1" class="modal-title">Edit Profile</h4>
+            </div>
+            <div class="modal-body">
+                <form class="reg-page log-reg-page" action="{{route('save_user')}}" method="post">
+
+                    <label>Name </label>
+                    <input class="form-control margin-bottom-20" value={{Auth::user()->name}} name="name" type="text" required>
+
+                    <label>Email</label>
+                    <input class="form-control margin-bottom-20" value={{Auth::user()->email}} name="email" type="text" disabled>
+                    {{ csrf_field() }}
+
+                    <label>Password </label>
+                    <input class="form-control margin-bottom-20"  name="bank" type="password" required>
+
                     <button class="btn-u btn-block" type="submit">Save</button>
                 </form>
             </div>

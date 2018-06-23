@@ -22,7 +22,7 @@
                         <div id="home" class="col-md-12">
                             <div class="card">
                                 <div class="header">
-                                    <h4 class="title">Transaction history</h4>
+                                    <h4 class="title">{{$title}}</h4>
                                 </div>
                                 <div class="table-responsive table-full-width table-container">
                                     <table class="table table-hover table-striped">
@@ -38,11 +38,16 @@
                                                 <th>Bank Details</th>
                                                 <th>Date Started</th>
                                                 <th>Status</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
+
                                                 @foreach($transactions as $transaction)
+                                                    <tr>
+                                                        @if($transaction->status=='cancelled')
+                                                            <tr class="bg bg-danger">
+                                                                @endif
                                                     <td>{{$transaction->id}}</td>
                                                     <td>{{$transaction->type}}</td>
                                                     <td>{{$transaction->amount}}</td>
@@ -53,6 +58,13 @@
                                                     <td>{{$transaction->bank_details}}</td>
                                                     <td>{{$transaction->created_at}}</td>
                                                     <td>{{$transaction->status}}</td>
+                                                    <td><a href="{{route('info',$transaction->id)}}"><i class="fa fa-eye text-primary" title="view"></i> </a>
+                                                        <a href="{{route('cancelled',$transaction->id)}}"><i class="fa fa-times" title="cancel"></i> </a>
+                                                        @if(Auth::user()->id==1)
+                                                            <a href="{{route('paid',$transaction->id)}}"><i class="fa fa-check text-success" title="paid"></i> </a>
+                                                            @endif
+
+                                                    </td>
                                             </tr>
                                            @endforeach
                                         </tbody>
